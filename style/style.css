@@ -1,0 +1,89 @@
+:root {
+    --bg-img: url('../src/img/fb2f655ee3f15405c5e5bee7c6aa9995.gif');
+}
+
+body {
+    font-size: 16px;
+    background-position: top;
+    
+    background: var(--bg-img);
+}
+
+.app-title {
+    font-size: 3rem;
+    position: fixed;
+    top: 25%;
+    left: 14%;
+    transform: skewY(1.4deg);
+    letter-spacing: 3px;
+    font-family: 'Pacifico', cursive;
+    animation: fadeIn 3s;
+    -webkit-animation: fadein 3s;
+}
+
+.fancyfont {
+    font-family: 'Pacifico',cursive;
+}
+
+.login-form {
+    width: 40%;
+    margin: 8% auto;
+    padding: 5%;
+    background-color: rgba(2, 2, 2, 0.6);    
+    font-weight: 700;
+    color: white;
+}
+
+.login-form .btn {
+    margin-top: 1rem;
+}
+
+
+/* home screen */
+.welcometext {
+    font-size: 1.8rem;
+    position: fixed;
+    top: 38%;
+    left: 45%;
+    transform: translateX(-50%) translateY(-45%);
+    transform: skewY(-12.5deg);
+    width: 45%;
+    animation: fadeIn 4s;
+    -webkit-animation: fadein 4s;
+}
+
+.welcometext h2 {
+    animation: fadeIn 2s;
+    -webkit-animation: fadein 2s;
+    font-size: 2.2rem;
+}
+
+.try-btn {
+    margin-top: 2rem;
+    box-shadow: 1px 1px 5px 2px #000;
+    float: right;
+}
+
+.sq-menu {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
