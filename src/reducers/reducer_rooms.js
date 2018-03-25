@@ -6,7 +6,8 @@ export default function (state = {}, action) {
         case ADD_ROOM:
             return Object.assign({}, state, {
                 name: action.payload.data.name,
-                job: action.payload.data.job
+                job: action.payload.data.job,
+                roomId: action.payload.data.roomId
             })
         default:
             return state;

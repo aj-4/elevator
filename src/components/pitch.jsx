@@ -38,7 +38,7 @@ class Pitch extends Component {
             this.props.room && this.props.room.name
             ? <div>
                 <div className="pitch-box">
-                <VideoPlayer />
+                <VideoPlayer roomid={this.props.room.roomId} />
                 <div>Matched with</div>
                 <h2>{this.props.room.name}, {this.props.room.job}</h2>
                 </div>
