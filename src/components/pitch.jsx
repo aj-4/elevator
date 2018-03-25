@@ -40,7 +40,7 @@ class Pitch extends Component {
                 <div className="pitch-box">
                 <VideoPlayer roomid={this.props.room.roomId} />
                 <div>Matched with</div>
-                <h2>{this.props.room.name}, {this.props.room.job}</h2>
+                <h2><span className="fancyfont">{this.props.room.name}</span>, {this.props.room.job}</h2>
                 </div>
             </div>
             : <div className="pitch-box">

@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 class Profile extends Component {
     render() {
         return (
-            <div>
-                <h4>{this.props.loggedInUser}'s Profile</h4>
+            <div className="profile-box">
+                <h1 className="profile-title"><div className="fancyfont">{this.props.loggedInUser.name}</div> <div>{this.props.loggedInUser.job}</div></h1>
+                <img className="profile-avatar" src="./src/img/erlich.jpg" alt="Profile Picture"/>
             </div>
         );
     }

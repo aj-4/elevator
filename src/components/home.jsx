@@ -36,7 +36,7 @@ class Home extends Component {
         return (
             <div className="home-screen">            
                 <div className="welcometext">
-                    <h1>
+                    <h1 className="welc-txt">
                         Welcome to <span className="fancyfont">Elevator</span>, {this.props.loggedInUser.name}
                     </h1>
                         {this.props.infoText}

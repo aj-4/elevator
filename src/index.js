@@ -22,8 +22,8 @@ ReactDOM.render(
         <Switch>
           <Route path="/home" component={Home} /> 
           <Route path="/pitch" component={Pitch} />
-          <Route path="/profile" component={Modal} />
-          <Route path="/info" component={Modal} />                  
+          <Route path="/profile" component={Profile} />
+          <Route path="/info" component={Profile} />                  
           <Route path="/" component={LogIn} />
         </Switch>
       </div>

@@ -8,6 +8,7 @@
 body {
     font-size: 16px;
     background-position: top;
+    font-family: Helvetica;
     
     background-image: var(--bg-img);
     background-color: var(--screen-color) !important;   
@@ -15,19 +16,24 @@ body {
 }
 
 .app-title {
-    font-size: 3rem;
+    font-size: 3.5rem;
     position: fixed;
-    top: 25%;
-    left: 14%;
+    top: 20vh;
+    left: 12%;
     transform: skewY(1.4deg);
     letter-spacing: 3px;
     font-family: 'Pacifico', cursive;
     animation: fadeIn 3s;
     -webkit-animation: fadein 3s;
+    -moz-animation: fadein 3s;    
 }
 
 .fancyfont {
     font-family: 'Pacifico',cursive;
+}
+
+.welc-txt {
+    margin-bottom: 3rem;
 }
 
 .login-form {
@@ -39,6 +45,10 @@ body {
     color: white;
 }
 
+.form-control.login-form {
+    margin-top: 0.5rem;
+}
+
 .login-form .btn {
     margin-top: 1rem;
 }
@@ -48,18 +58,20 @@ body {
 .welcometext {
     font-size: 1.8rem;
     position: fixed;
-    top: 38%;
+    top: 33%;
     left: 45%;
     transform: translateX(-50%) translateY(-45%);
     transform: skewY(-12.5deg);
     width: 45%;
     animation: fadeIn 3s;
     -webkit-animation: fadein 3s;
+    -moz-animation: fadein 3s;    
 }
 
 .welcometext h2 {
     animation: fadeIn 2s;
     -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
     font-size: 2.2rem;
 }
 
@@ -90,6 +102,7 @@ body {
     transition: .2s all;
     animation: inLeft 1s;
     -webkit-animation: inLeft 1s;
+    -moz-animation: inLeft 1s;    
 }
 
 .menubox i {
@@ -129,6 +142,7 @@ a:active {
     transform: translateY(-30%);
     animation: fadeIn 2s;
     -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;    
 }
 
 .loader {
@@ -142,6 +156,7 @@ a:active {
     height: 60px;
     animation: spin 3s linear infinite;
 }
+
 
 @keyframes spin {
     0% {
@@ -157,6 +172,39 @@ a:active {
     margin: 5px;
     padding: 1rem 2rem;
     border-radius: 10px;
+}
+
+.profile-box {
+    font-family: Arial,
+    Helvetica,
+    sans-serif;
+    letter-spacing: 1.5px;
+    background-color: rgba(113, 121, 122, 0.479);
+    width: 50%;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #444444;
+    transform: translateX(-20%);
+    transform: translateY(-30%);
+    animation: fadeIn 2s;
+    display: table;
+    vertical-align: middle;
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+}
+
+.profile-title {
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.profile-avatar {
+    display: table-cell;
+    float: right;
 }
 
 @keyframes inLeft {
@@ -182,6 +230,17 @@ a:active {
     }
 }
 
+@-moz-keyframes inLeft {
+    from {
+        opacity: 0;
+        margin-left: -2rem;
+    }
+    to {
+        opacity: 1;
+        margin-left: 1rem
+    }
+}
+
 @keyframes fadein {
     from {
         opacity: 0;
@@ -192,6 +251,15 @@ a:active {
 }
 
 @-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
     from {
         opacity: 0;
     }

@@ -43,11 +43,13 @@ class LogIn extends Component {
                     <Field 
                         name="name" 
                         label="Your Name"
+                        className="login-field"
                         component={this.renderField}
                     />
                     <Field
                         name="profession"
                         label="Your Profession"
+                        className="login-field"                        
                         component={this.renderField}
                     />
                     <button type="submit" className="btn btn-primary">Let's Go</button>
