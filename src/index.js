@@ -8,6 +8,8 @@ import reducers from './reducers';
 import Home from './components/home';
 import LogIn from './components/login';
 import Profile from './components/profile';
+import Modal from './components/modal';
+import Pitch from './components/pitch';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -17,7 +19,9 @@ ReactDOM.render(
       <div>
         <Switch>
           <Route path="/home" component={Home} /> 
-          <Route path="/profile" component={Profile} />          
+          <Route path="/pitch" component={Pitch} />
+          <Route path="/profile" component={Modal} />
+          <Route path="/info" component={Modal} />                  
           <Route path="/" component={LogIn} />
         </Switch>
       </div>

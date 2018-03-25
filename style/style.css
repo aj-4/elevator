@@ -1,12 +1,17 @@
 :root {
     --bg-img: url('../src/img/fb2f655ee3f15405c5e5bee7c6aa9995.gif');
+    --blend-mode: none;    
+    --screen-color: none;
+    --hover-color: blue;
 }
 
 body {
     font-size: 16px;
     background-position: top;
     
-    background: var(--bg-img);
+    background-image: var(--bg-img);
+    background-color: var(--screen-color) !important;   
+    background-blend-mode: var(--blend-mode) !important;
 }
 
 .app-title {
@@ -48,8 +53,8 @@ body {
     transform: translateX(-50%) translateY(-45%);
     transform: skewY(-12.5deg);
     width: 45%;
-    animation: fadeIn 4s;
-    -webkit-animation: fadein 4s;
+    animation: fadeIn 3s;
+    -webkit-animation: fadein 3s;
 }
 
 .welcometext h2 {
@@ -68,6 +73,85 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    width: 35%;
+}
+
+.menubox {
+    padding: 0.3rem 2rem;
+    width: 33.33%;    
+    margin: 1rem;
+    background-color: rgba(193, 201, 124, 0.651);
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: rgb(150, 108, 19);
+    box-shadow: 4px 3px 5px rgb(82, 81, 81);
+    transition: .2s all;
+    animation: inLeft 1s;
+    -webkit-animation: inLeft 1s;
+}
+
+.menubox i {
+    font-size: 4rem;
+    display: block;
+}
+
+.menubox:hover {
+    transform: translateY(-4px);
+    color: var(--hover-color);
+    cursor: pointer;
+}
+
+.tooltip:hover~.menubox {
+    display: inline;
+}
+
+.pitch-box {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1.5px;
+    background-color: rgba(113, 121, 122, 0.479);
+    width: 50%;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #444444;
+    transform: translateX(-20%);
+    transform: translateY(-30%);
+    animation: fadeIn 2s;
+    -webkit-animation: fadein 2s;
+}
+
+.pitch-box .btn {
+    float: right;
+    margin: 5px;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+@keyframes inLeft {
+    from {
+        opacity: 0;
+        margin-left: 0;
+    }
+
+    to {
+        opacity: 1;
+        margin-left: 1rem
+    }
+}
+
+@-webkit-keyframes inLeft {
+    from {
+        opacity: 0;
+        margin-left: -2rem;
+    }
+    to {
+        opacity: 1;
+        margin-left: 1rem
+    }
 }
 
 @keyframes fadein {

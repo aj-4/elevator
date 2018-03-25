@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import { LOGIN_USER } from '../actions/index';
 
 export default function (state = {}, action) {
