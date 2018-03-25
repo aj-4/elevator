@@ -6,10 +6,10 @@
   "repository": "",
   "proxy": "http://localhost:4000",
   "scripts": {
-    "start": "node ./server/index.js",
-    "wp-prod": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "start": "node ./src/server/index.js",
+    "wp-dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "heroku-postbuild": "webpack -p --config ./webpack.prod.config.js --progress",
-    "wp-dev": "webpack ./webpack.config.js",
+    "wp-prod": "webpack ./webpack.config.js -w",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -25,12 +25,15 @@
     "jquery": "^2.2.1",
     "jsdom": "^8.1.0",
     "mocha": "^2.4.5",
+    "nodemon": "^1.17.2",
     "react-addons-test-utils": "^0.14.7",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-preset-stage-1": "^6.1.18",
+    "body-parser": "^1.18.2",
     "express": "^4.16.3",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
@@ -39,6 +42,7 @@
     "react-router": "^2.0.1",
     "react-router-dom": "^4.2.2",
     "redux": "^3.0.4",
-    "redux-form": "^7.3.0"
+    "redux-form": "^7.3.0",
+    "redux-promise": "^0.5.3"
   }
 }

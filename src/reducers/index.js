@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
     menu: ActivateMenuReducer,
     infoText: ChangeInfoTextReducer,
     isReady: UserReadyReducer,
-    rooms: ChangeRoomsReducer
+    room: ChangeRoomsReducer
 });
 
 export default rootReducer;

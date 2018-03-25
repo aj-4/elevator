@@ -1,12 +1,13 @@
-import { ADD_ROOM, POP_ROOM } from '../actions';
-import tooltips from '../site_text/tooltips';
+import { ADD_ROOM } from '../actions';
 
-export default function (state = [], action) {
-    switch (action.type) {
-        case (ADD_ROOM):
-            return [...state, action.payload]
-        case (POP_ROOM):
-            return state.slice(1);
+export default function (state = {}, action) {
+    console.log(action);
+    switch(action.type) {
+        case ADD_ROOM:
+            return Object.assign({}, state, {
+                name: action.payload.data.name,
+                job: action.payload.data.job
+            })
         default:
             return state;
     }

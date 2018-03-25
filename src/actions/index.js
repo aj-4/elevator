@@ -5,6 +5,8 @@ export const USER_READY = 'USER_READY';
 export const ADD_ROOM = 'ADD_ROOM';
 export const POP_ROOM = 'POP_ROOM';
 
+import axios from 'axios';
+
 export function LoginUser (values) {
     return {
         type: LOGIN_USER,
@@ -31,10 +33,11 @@ export function UserReadyAction() {
     }
 }
 
-export function ActionAddRoom(room) {
+export function ActionAddRoom(userData) {
+    const request = axios.post('/roomList', userData.name);
     return {
         type: ADD_ROOM,
-        payload: room
+        payload: request
     }
 }
 

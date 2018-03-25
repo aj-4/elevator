@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { UserReadyAction } from '../actions'
+import { UserReadyAction, ActionAddRoom } from '../actions'
 import { Link } from 'react-router-dom';
 import VideoPlayer from './video-player';
 
@@ -15,11 +15,16 @@ class Pitch extends Component {
         document.documentElement.style.setProperty("--/bg-img", `url('../src/img/box.jpg')`);        
     }
 
+    ready() {
+        this.props.UserReadyAction();
+        this.props.ActionAddRoom(({ name: this.props.loggedInUser }));        
+    }
+
     renderButton() {
         return (
             <div className="pitch-box">
                 <h1>Ready to Pitch?</h1>
-                <button onClick={this.props.UserReadyAction} className="btn btn-primary">Yes</button>
+                <button onClick={this.ready.bind(this)} className="btn btn-primary">Yes</button>
                 <Link to="/home" ><button className="btn btn-warn">No</button> </Link>
             </div>
         );
@@ -28,10 +33,17 @@ class Pitch extends Component {
     render() {
         if (!this.props.isReady) {
             return this.renderButton();
-        }
+        } 
         return (
-            <div className="pitch-box">
+            this.props.room && this.props.room.name
+            ? <div>
+                <div className="pitch-box">
                 <VideoPlayer />
+                <div>Matched with</div>
+                <h2>{this.props.room.name}, {this.props.room.job}</h2>
+                </div>
+            </div>
+            : <div className="pitch-box">
                 <h1>Finding you a match...</h1>    
                 <div className="loader"></div>       
             </div>
@@ -40,7 +52,10 @@ class Pitch extends Component {
 }
 
 function mapStateToProps(state) {
-    return { isReady: state.isReady };
+    return { isReady: state.isReady,
+            loggedInUser: state.loggedInUser,
+            room: state.room
+        };
 }
 
-export default connect(mapStateToProps, { UserReadyAction })(Pitch);
+export default connect(mapStateToProps, { UserReadyAction, ActionAddRoom })(Pitch);

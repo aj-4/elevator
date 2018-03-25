@@ -1,21 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { ActionAddRoom, ActionPopRoom } from '../actions';
 
 class VideoPlayer extends Component {
     constructor(props) {
         super(props);
-        this.room = 0;
-    }
-
-    componentDidMount() {
-        if (this.props.rooms && this.props.rooms.length) {
-            this.room = this.props.rooms[0];
-            ActionPopRoom();
-        } else {
-            this.room = 1;
-            ActionAddRoom(1);
-        }
     }
     
     render() {
@@ -32,8 +19,4 @@ class VideoPlayer extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {rooms: state.rooms};
-}
-
-export default connect(mapStateToProps, { ActionAddRoom, ActionPopRoom })(VideoPlayer);
+export default VideoPlayer;
