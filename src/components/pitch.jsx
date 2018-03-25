@@ -23,7 +23,7 @@ class Pitch extends Component {
     renderButton() {
         return (
             <div className="pitch-box">
-                <h1>Ready to Pitch?</h1>
+                <h1>Ready to Pitch?  <i className="ion-arrow-swap"></i></h1>
                 <button onClick={this.ready.bind(this)} className="btn btn-primary">Yes</button>
                 <Link to="/home" ><button className="btn btn-warn">No</button> </Link>
             </div>

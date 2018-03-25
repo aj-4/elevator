@@ -7,8 +7,8 @@ import { LoginUser } from '../actions/index';
 class LogIn extends Component {
 
     componentDidMount() {
-        console.log('running');
         document.documentElement.style.setProperty("--bg-img", `url('../src/img/fb2f655ee3f15405c5e5bee7c6aa9995.gif')`);
+        document.documentElement.style.setProperty("--screen-color", `none')`);
     }
 
     renderField(field) {

@@ -130,7 +130,7 @@ a:active {
 .pitch-box {
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1.5px;
-    background-color: rgba(113, 121, 122, 0.479);
+    background-color: rgba(79, 109, 99, 0.37);
     width: 50%;
     position: absolute;
     top: 30%;
@@ -170,8 +170,9 @@ a:active {
 .pitch-box .btn {
     float: right;
     margin: 5px;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1.5rem;
     border-radius: 10px;
+    font-size: 1.5rem;
 }
 
 .profile-box {
@@ -198,13 +199,69 @@ a:active {
 
 .profile-title {
     text-align: center;
-    vertical-align: middle;
+    margin-top: 2rem;
+    vertical-align: top;
     display: table-cell;
 }
 
 .profile-avatar {
     display: table-cell;
     float: right;
+}
+
+.star-rating {
+    color: rgb(44, 44, 44);
+    position: absolute;
+    font-size: 4rem;
+    left: 10%;
+    bottom: 0;
+}
+
+.info-box {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1.5px;
+    background-color: rgba(18, 137, 167, 0.733);
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px #444444;
+    transform: translateX(-22%);
+    transform: translateY(-50%);
+    animation: fadeIn 2s;
+    display: table;
+    vertical-align: middle;
+    -webkit-animation: fadein 2s;
+    -moz-animation: fadein 2s;
+}
+
+.img-container {
+    position: relative;
+}
+
+.info-title {
+    color: white;
+    position: absolute;
+    font-size: 5rem;
+    top: 50%;
+    left: 25%;
+    transform: translateX(-50%);
+    transform: translateY(-50%);
+    text-align: center;
+    text-shadow: 2px 2px 5px #000;
+}
+
+.info-gif {
+    width: 100%;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+.info-sub {
+    padding: 1rem;
+    color: white;
+    text-align: center;
 }
 
 @keyframes inLeft {

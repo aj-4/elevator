@@ -8,6 +8,7 @@ import {ActivateMenu} from '../actions/index'
 class Home extends Component {
     componentDidMount() {
         document.documentElement.style.setProperty("--bg-img", `url('../src/img/box.jpg')`);
+        document.documentElement.style.setProperty("--screen-color", `none')`);
     }
 
     componentDidUpdate() {
