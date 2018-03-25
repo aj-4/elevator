@@ -97,6 +97,13 @@ body {
     display: block;
 }
 
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none !important;
+}
+
 .menubox:hover {
     transform: translateY(-4px);
     color: var(--hover-color);
@@ -122,6 +129,27 @@ body {
     transform: translateY(-30%);
     animation: fadeIn 2s;
     -webkit-animation: fadein 2s;
+}
+
+.loader {
+    float: right;
+    border: 12px solid #f3f3f3;
+    /* Light grey */
+    border-top: 12px solid skyblue;
+    /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .pitch-box .btn {

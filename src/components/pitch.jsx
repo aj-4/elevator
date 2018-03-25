@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { UserReadyAction } from '../actions'
+import { Link } from 'react-router-dom';
+import VideoPlayer from './video-player';
 
 class Pitch extends Component {
     constructor(props) {
@@ -9,8 +11,8 @@ class Pitch extends Component {
 
     componentDidMount() {
         document.documentElement.style.setProperty("--blend-mode", `overlay`);
-        document.documentElement.style.setProperty("--screen-color", 'cornflowerblue');
-        document.documentElement.style.setProperty("--bg-img", `url('../src/img/box.jpg')`);        
+        document.documentElement.style.setProperty("--screen-color", 'skyblue');
+        document.documentElement.style.setProperty("--/bg-img", `url('../src/img/box.jpg')`);        
     }
 
     renderButton() {
@@ -18,7 +20,7 @@ class Pitch extends Component {
             <div className="pitch-box">
                 <h1>Ready to Pitch?</h1>
                 <button onClick={this.props.UserReadyAction} className="btn btn-primary">Yes</button>
-                <button className="btn btn-warn">No</button>
+                <Link to="/home" ><button className="btn btn-warn">No</button> </Link>
             </div>
         );
     }
@@ -29,7 +31,9 @@ class Pitch extends Component {
         }
         return (
             <div className="pitch-box">
-                <h1>Finding you a match...</h1>           
+                <VideoPlayer />
+                <h1>Finding you a match...</h1>    
+                <div className="loader"></div>       
             </div>
         );
     }
