@@ -2,15 +2,30 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const VENDOR_LIBS = [
+  'react',
+  'react-dom',
+  'react-redux',
+  'react-router',
+  'redux',
+  'redux-form',
+  'axios',
+  'body-parser',
+  'express',
+  'react-router-dom',
+  'redux-promise'
+];
+
 module.exports = {
-  entry: [
-    './src/index.js'
-  ],
+  entry: {
+    bundle: './src/index.js',
+    vendor: VENDOR_LIBS
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'dist/',
-    filename: 'bundle.js'
+    filename: '[name].[chunkhash].js'
   },
+  target: 'node',
   module: {
     rules: [
       {
