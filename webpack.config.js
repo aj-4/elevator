@@ -10,8 +10,6 @@ const VENDOR_LIBS = [
   'redux',
   'redux-form',
   'axios',
-  'body-parser',
-  'express',
   'react-router-dom',
   'redux-promise'
 ];
@@ -25,7 +23,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
   },
-  target: 'node',
+  target: 'web',
   module: {
     rules: [
       {
