@@ -1,5 +1,5 @@
 :root {
-    --bg-img: url('../src/img/fb2f655ee3f15405c5e5bee7c6aa9995.gif');
+    --bg-img: url('/img/fb2f655ee3f15405c5e5bee7c6aa9995.gif');
     --blend-mode: none;    
     --screen-color: none;
     --hover-color: blue;

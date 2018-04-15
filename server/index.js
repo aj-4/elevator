@@ -4,13 +4,26 @@ let roomCounter = 0;
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const path = require('path');
+
+if (process.env.NODE_ENV !== 'production'){
+    const webpack = require('webpack');
+    const webpackDevMiddleware = require('webpack-dev-middleware');
+    const webpackConfig = require('../webpack.config');
+    app.use(webpackDevMiddleware(webpack(webpackConfig)));
+} else {
+    app.use(express.static('dist'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname + '../dist/index.html'));
+    });
+}
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 4000;
 
-app.use(express.static(__dirname + './../../')); 
+// app.use(express.static(__dirname)); 
 
 app.post('/roomList', (req, res) => {
     if (db.length) {
